@@ -1,46 +1,31 @@
-# Astro Starter Kit: Basics
+# ☸️ Cloud-Native Personal Bio & Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+This repository hosts my personal bio website and project portfolio. More importantly, it serves as a live demonstration of my **DevOps, GitOps, and Kubernetes** engineering workflows. 
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Instead of deploying to a standard static host, this portfolio is fully containerized, managed via Infrastructure as Code (IaC), and orchestrated inside a Kubernetes cluster.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Tech Stack & Architecture
+
+* **Frontend:** Astro / TailwindCSS (Lightweight, performance-optimized static site)
+* **Containerization:** Docker (Multi-stage builds for minimal image size)
+* **CI/CD:** GitHub Actions (Automated linting, testing, and Docker builds)
+* **Registry:** GitHub Container Registry (GHCR)
+* **Orchestration:** Kubernetes (K3s home-lab / Cloud managed cluster)
+* **GitOps:** ArgoCD (Automated synchronization from this repo to the cluster)
+
+---
+
+## 📁 Repository Structure
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+├── .github/workflows/      # CI/CD Pipelines (Build & Push)
+├── site/                   # Frontend website code (Bio & Portfolio pages)
+│   ├── content/            # Markdown files for easy content updates
+│   └── Dockerfile          # Multi-stage production Docker build
+├── k8s/                    # Cloud-native infrastructure manifests
+│   ├── deployment.yaml     # Application deployment with health checks
+│   ├── service.yaml        # Internal cluster networking
+│   └── ingress.yaml        # External traffic routing & TLS
+└── README.md               # You are here!
