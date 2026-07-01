@@ -1,11 +1,38 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// src/pages/index.astro
 ---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My K8s Portfolio</title>
+    <style>
+      body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; background: #fafafa; color: #333; }
+      nav { margin-bottom: 40px; }
+      nav a { margin-right: 20px; text-decoration: none; color: #007acc; font-weight: bold; }
+      .hero { background: #007acc; color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/portfolio">Portfolio</a>
+    </nav>
 
-<Layout>
-	<Welcome />
-</Layout>
+    <div class="hero">
+      <h1>Hello, I'm a Cloud & DevOps Engineer 👋</h1>
+      <p>Specializing in cloud-native ecosystems, automation, and Kubernetes orchestration.</p>
+    </div>
+
+    <h2>About This Site</h2>
+    <p>
+      This portfolio isn't just hosted on a standard static platform—it's engineered. It is fully containerized using <strong>Docker</strong>, orchestrated via <strong>Kubernetes</strong>, and deployed through an automated <strong>GitOps</strong> pipeline.
+    </p>
+
+    <h2>Core Stack</h2>
+    <ul>
+      <li><strong>Orchestration:</strong> Kubernetes (K3s, Minikube)</li>
+      <li><strong>CI/CD & GitOps:</strong> GitHub Actions, ArgoCD</li>
+      <li><strong>IaC:</strong> Terraform</li>
+    </ul>
+  </body>
+</html>
